@@ -56,6 +56,9 @@ export default function WeatherSearch() {
               <img src={weather.icon} alt={weather.description} />
             </li>
           </ul>
+          <a href="https://github.com/M-Lina3/react-nyappi">
+            Open source Code 🐈
+          </a>
         </div>
       </div>
     );
