@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min";
 
 export default function WeatherSearch() {
   const [city, setCity] = useState("");
@@ -44,7 +40,7 @@ export default function WeatherSearch() {
 
   if (loaded) {
     return (
-      <div className="card">
+      <div>
         {form}
         <div>
           <ul>
@@ -56,9 +52,6 @@ export default function WeatherSearch() {
               <img src={weather.icon} alt={weather.description} />
             </li>
           </ul>
-          <a href="https://github.com/M-Lina3/react-nyappi">
-            Open source Code 🐈
-          </a>
         </div>
       </div>
     );

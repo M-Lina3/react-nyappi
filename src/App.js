@@ -1,12 +1,23 @@
-import React from "react"
-import './App.css';
-import WeatherSearch from './WeatherSearch'
+import React from "react";
+import "./App.css";
+import WeatherSearch from "./WeatherSearch";
 
 function App() {
   return (
     <div className="App">
-      <h1>React Nyappi</h1>
-      <WeatherSearch />
+      <div className="container">
+        <h1>React Nyappi</h1>
+        <WeatherSearch />
+        <footer>
+          <a
+            href="https://github.com/M-Lina3/react-nyappi"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open source Code 🐈
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }
