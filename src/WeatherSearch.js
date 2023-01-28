@@ -20,8 +20,12 @@ export default function WeatherSearch() {
           <div className="eldate">January 23, 2023 3:33</div>
           <div className="city">Atlanta</div>
           <div className="country">US</div>
-          <br></br>
-          <div className="maintemp">57℉</div>
+          <div className="maintemp">
+            57&nbsp;
+            <span className="smol">
+              <span>°F</span> | <span>°C</span>
+            </span>
+          </div>
           <div className="feels">Feels Like: 48°</div>
           <div className="highlow">50°/70°</div>
           <br></br>
@@ -35,27 +39,27 @@ export default function WeatherSearch() {
           <div className="row pb-2 ms-1">
             <div>Monday</div>
             <div>🌤</div>
-            <div>33℉/33℉</div>
+            <div>33°/33°</div>
           </div>
           <div className="row pb-2 ms-1">
             <div>Tuesday</div>
             <div>🌤</div>
-            <div>33℉/33℉</div>
+            <div>33°/33°</div>
           </div>
           <div className="row pb-2 ms-1">
             <div>Wednesday</div>
             <div>🌤</div>
-            <div>33℉/33℉</div>
+            <div>33°/33°</div>
           </div>
           <div className="row pb-2 ms-1">
             <div>Thursday</div>
             <div>🌤</div>
-            <div>33℉/33℉</div>
+            <div>33°/33°</div>
           </div>
           <div className="row pb-2 ms-1">
             <div>Friday</div>
             <div>🌤</div>
-            <div>33℉/33℉</div>
+            <div>33°/33°</div>
           </div>
         </div>
       </div>

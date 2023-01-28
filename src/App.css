@@ -1,17 +1,10 @@
 .lebox {
-  background: radial-gradient(
-    328px at 2.9% 15%,
-    rgb(222, 252, 249) 0%,
-    rgb(202, 222, 252) 25.8%,
-    rgb(195, 190, 240) 50.8%,
-    rgb(195, 190, 240) 77.6%,
-    rgb(204, 168, 233) 100.7%
-  );
+  background: linear-gradient(57.4deg, rgb(249, 206, 183) 4.6%, rgb(234, 174, 202) 26%, rgb(210, 182, 226) 49.1%, rgb(173, 209, 242) 86.5%);;
   border-color: #fc82bb;
   border-radius: 10px;
   box-shadow: 7px 5px 5px lightgray;
   color: white;
-  max-width: 420px;
+  max-width: 400px;
   padding: 20px;
 }
 .laform {
@@ -43,6 +36,9 @@
   font-size: 50px;
   display: inline;
   line-height: 52px;
+}
+.smol {
+  font-size: 20px;
 }
 .highlow {
   font-size: 22px;
