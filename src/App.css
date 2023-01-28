@@ -1,4 +1,59 @@
-
+.lebox {
+  background: radial-gradient(
+    328px at 2.9% 15%,
+    rgb(222, 252, 249) 0%,
+    rgb(202, 222, 252) 25.8%,
+    rgb(195, 190, 240) 50.8%,
+    rgb(195, 190, 240) 77.6%,
+    rgb(204, 168, 233) 100.7%
+  );
+  border-color: #fc82bb;
+  border-radius: 10px;
+  box-shadow: 7px 5px 5px lightgray;
+  color: white;
+  max-width: 420px;
+  padding: 20px;
+}
+.laform {
+  border-color: #cca8e9;
+  text-align: center;
+}
+.elbutton {
+  background: linear-gradient(#cca8e9, #ffb5d7);
+  border-color: #cca8e9;
+  border-radius: 10px;
+  color: white;
+  padding: 2px 15px;
+}
+.eldate {
+  text-align: center;
+}
+.city {
+  font-size: 37px;
+  line-height: 38px;
+}
+.country {
+  font-size: 18px;
+  line-height: 20px;
+  margin-right: 10px;
+  font-style: italic;
+  text-align: right;
+}
+.maintemp {
+  font-size: 50px;
+  display: inline;
+  line-height: 52px;
+}
+.highlow {
+  font-size: 22px;
+  text-align: right;
+}
+.feels {
+  font-size: 13px;
+}
+.forecat {
+  font-size: 15px;
+}
 
 @keyframes App-logo-spin {
   from {

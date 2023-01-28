@@ -1,7 +1,68 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 export default function WeatherSearch() {
+  return (
+    <div className="lebox">
+      <div className="row mt-2 justify-content-center">
+        <div className="col">
+          <form className="laform">
+            <input type="search" placeholder="Enter a city..." />
+            <input type="Submit" value="Search" className="elbutton ms-1" />
+            <button className="elbutton ms-2">🌟</button>
+          </form>
+        </div>
+      </div>
+
+      <div className="row mt-3 ms-1">
+        <div className="col-8">
+          <div className="eldate">January 23, 2023 3:33</div>
+          <div className="city">Atlanta</div>
+          <div className="country">US</div>
+          <br></br>
+          <div className="maintemp">57℉</div>
+          <div className="feels">Feels Like: 48°</div>
+          <div className="highlow">50°/70°</div>
+          <br></br>
+          <div>🔆</div>
+          <div>Fog</div>
+          <div>Wind: 3 mph</div>
+          <div>Humidity: 0%</div>
+        </div>
+
+        <div className="col-4 forecat">
+          <div className="row pb-2 ms-1">
+            <div>Monday</div>
+            <div>🌤</div>
+            <div>33℉/33℉</div>
+          </div>
+          <div className="row pb-2 ms-1">
+            <div>Tuesday</div>
+            <div>🌤</div>
+            <div>33℉/33℉</div>
+          </div>
+          <div className="row pb-2 ms-1">
+            <div>Wednesday</div>
+            <div>🌤</div>
+            <div>33℉/33℉</div>
+          </div>
+          <div className="row pb-2 ms-1">
+            <div>Thursday</div>
+            <div>🌤</div>
+            <div>33℉/33℉</div>
+          </div>
+          <div className="row pb-2 ms-1">
+            <div>Friday</div>
+            <div>🌤</div>
+            <div>33℉/33℉</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  /*
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
@@ -57,5 +118,5 @@ export default function WeatherSearch() {
     );
   } else {
     return form;
-  }
+  }*/
 }
