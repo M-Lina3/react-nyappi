@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "./App.css";
 
 export default function WeatherSearch() {
@@ -7,7 +7,13 @@ export default function WeatherSearch() {
       <div className="row mt-2 justify-content-center">
         <div className="col"></div>
       </div>
-      *insert search bar*<button className="elbutton ms-2">🌟</button>
+
+      <form className="laform">
+        <input type="search" placeholder="Enter a city..." />
+        <input type="Submit" value="Search" className="elbutton ms-1" />
+        <button className="elbutton ms-2">🌟</button>
+      </form>
+      <button className="elbutton ms-2">🌟</button>
 
       <div className="row mt-3 ms-1">
         <div className="col-8">
@@ -61,14 +67,6 @@ export default function WeatherSearch() {
   );
 
   /*
-  **search bar**
-   <form className="laform">
-            <input type="search" placeholder="Enter a city..." />
-            <input type="Submit" value="Search" className="elbutton ms-1" />
-            <button className="elbutton ms-2">🌟</button>
-          </form>
-
-
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
