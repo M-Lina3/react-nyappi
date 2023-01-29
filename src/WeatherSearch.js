@@ -13,7 +13,6 @@ export default function WeatherSearch() {
         <input type="Submit" value="Search" className="elbutton ms-1" />
         <button className="elbutton ms-2">🌟</button>
       </form>
-      <button className="elbutton ms-2">🌟</button>
 
       <div className="row mt-3 ms-1">
         <div className="col-8">
