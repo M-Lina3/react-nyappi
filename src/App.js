@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>React Nyappi</h1>
-        <WeatherSearch />
+        <WeatherSearch defaultCity="Atlanta" />
         <footer>
           <a
             href="https://github.com/M-Lina3/react-nyappi"
