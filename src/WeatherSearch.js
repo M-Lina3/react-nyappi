@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate"
+import WeatherData from "./WeatherData";
 
 export default function WeatherSearch(props) {
   const [weather, setWeather] = useState({ live: false });
@@ -8,6 +10,8 @@ export default function WeatherSearch(props) {
   function displayWeather(response) {
     setWeather({
       live: true,
+      date: new Date(response.data.dt * 1000),
+      country: response.data.sys.country,
       temperature: Math.round(response.data.main.temp),
       wind: response.data.wind.speed,
       name: response.data.name,
@@ -33,10 +37,12 @@ export default function WeatherSearch(props) {
           <input type="Submit" value="Search" className="elbutton ms-1" />
           <button className="elbutton ms-2">🌟</button>
         </form>
-
+<WeatherData />
         <div className="row mt-3 ms-1">
           <div className="col-8">
-            <div className="eldate">January 23, 2023 3:33</div>
+            <div className="eldate">
+              <FormattedDate date={weather.date} />
+            </div>
             <div className="city">{weather.name}</div>
             <div className="country">US</div>
             <div className="maintemp">
