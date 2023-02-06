@@ -23,7 +23,7 @@ export default function WeatherData(props) {
           <div className="highlow">
             {props.data.min}°/{props.data.max}°
           </div>
-          <div>
+          <div className="mt-3">
             <WeatherIcon code={props.data.icon} />
            
           </div>
