@@ -54,7 +54,6 @@
 }
 .highlow {
   font-size: 22px;
-  text-align: right;
 }
 .feels {
   font-size: 13px;
@@ -65,6 +64,7 @@
   height: 80px;
   position: relative;
   margin-left: 15px;
+  animation: App-logo-spin infinite 3s ease-out;
 }
 .forecat {
   font-size: 15px;
