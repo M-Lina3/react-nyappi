@@ -3,6 +3,9 @@ import WeatherIcon from "./WeatherIcon";
 import "./App.css";
 
 export default function WeatherForecast() {
+  /* let key = "8c48afa47a9a9c24f3500c7039d50aaa"
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=14.14&lon=10.1&appid=${key}`;
+  */
   return (
     <div className="col-4 forecat">
       <div className="row pb-2 ms-1">
