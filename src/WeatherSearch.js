@@ -9,6 +9,7 @@ export default function WeatherSearch(props) {
 
   function displayWeather(response) {
     setWeather({
+      coordinates: response.data.coord,
       live: true,
       date: new Date(response.data.dt * 1000),
       country: response.data.sys.country,
