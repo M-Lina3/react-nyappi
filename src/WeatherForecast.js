@@ -8,8 +8,8 @@ export default function WeatherForecast(props) {
   let [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    setLive(false)
-  },[props.coordinates])
+    setLive(false);
+  }, [props.coordinates]);
 
   function getForecast(response) {
     setForecast(response.data.daily);
@@ -18,8 +18,8 @@ export default function WeatherForecast(props) {
 
   if (live) {
     return (
-      <div className="col-4 forecat">
-        {forecast.map(function(dailyForecast, index) {
+      <div className="col-4 forcat">
+        {forecast.map(function (dailyForecast, index) {
           if (index < 5) {
             return (
               <div key={index}>
@@ -27,11 +27,9 @@ export default function WeatherForecast(props) {
               </div>
             );
           } else {
-            return "nya"
+            return null;
           }
-        }
-        )}
-        
+        })}
       </div>
     );
   } else {

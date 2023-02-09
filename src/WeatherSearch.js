@@ -56,7 +56,6 @@ export default function WeatherSearch(props) {
             onChange={cityChange}
           />
           <input type="Submit" value="Search" className="elbutton ms-1" />
-          <button className="elbutton ms-2">🌟</button>
         </form>
         <WeatherData data={weather} />
       </div>
@@ -66,3 +65,5 @@ export default function WeatherSearch(props) {
     return "Nyaaa...";
   }
 }
+
+/*<button className="elbutton ms-2">🌟</button>*/

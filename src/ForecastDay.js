@@ -22,8 +22,8 @@ export default function ForecastDay(props) {
   return (
     <div className="row pb-2 ms-1">
       <div>{day()}</div>
-      <div className="forecaticon">
-        <WeatherIcon code={props.data.weather[0].icon} size={30} />
+      <div className="forcaticon">
+        <WeatherIcon code={props.data.weather[0].icon} size={33} />
       </div>
       <div>
         {Math.round(props.data.temp.max)}°/
@@ -32,10 +32,3 @@ export default function ForecastDay(props) {
     </div>
   );
 }
-
-/*
-      max: Math.round(response.data.daily[0].temp.max),
-      min: Math.round(response.data.daily[0].temp.min),
-      day: response.data.daily[0].dt,
-      icon: response.data.daily[0].weather[0].icon,
-      */
