@@ -14,7 +14,7 @@ export default function WeatherData(props) {
             <FormattedDate date={props.data.date} />
           </div>
           <div className="city">{props.data.name}</div>
-          <div className="country">US</div>
+          <div className="country">{props.data.country}</div>
           <div className="maintemp">
             <WeatherTemp celsius={props.data.temperature} />
           </div>
@@ -28,7 +28,7 @@ export default function WeatherData(props) {
           <div>Wind: {props.data.wind} m/sec</div>
           <div>Humidity: {props.data.humidity}%</div>
         </div>
-        <WeatherForecast coordinates={props.data.coordinates}/>
+        <WeatherForecast coordinates={props.data.coordinates} />
       </div>
     </div>
   );
