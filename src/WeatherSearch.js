@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import WeatherData from "./WeatherData";
 
 export default function WeatherSearch(props) {
   const [weather, setWeather] = useState({ live: false });
+  const [cityInput, setCityInput] = useState(props.defaultCity);
   const [city, setCity] = useState(props.defaultCity);
 
+  useEffect(() => {
+    search();
+  }, [city]);
+
   function displayWeather(response) {
+    console.log("displaying weather " + response.data.name);
+    setWeather({ live: false });
+
     setWeather({
       coordinates: response.data.coord,
       live: true,
@@ -27,43 +35,66 @@ export default function WeatherSearch(props) {
   }
 
   function search() {
+    console.log("looking for " + city);
+
     const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(displayWeather);
+    axios.get(apiUrl).then((res) => {
+      displayWeather(res);
+    });
   }
 
   function searchCity(event) {
     event.preventDefault();
-    search();
+    setCity(cityInput);
+  }
+
+  function searchLocation(la, lo) {
+    let key = "bc2cd97eaa209e7d22d8f3c84081655f";
+
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${la}&lon=${lo}8&units=metric&appid=${key}`;
+    //https://api.openweathermap.org/data/2.5/onecall?lat=${la}&lon=${lo}&units=metric&appid=${key}
+
+    console.log(lo + la);
+    axios.get(apiUrl).then((res) => {
+      setCity(res.data.name);
+    });
   }
 
   function cityChange(event) {
-    setCity(event.target.value);
+    setCityInput(event.target.value);
   }
 
-  if (weather.live) {
-    return (
-      <div className="lebox">
-        <div className="row mt-2 justify-content-center">
-          <div className="col"></div>
+  function getCurrentLocation() {
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+      let la = position.coords.latitude;
+      let lo = position.coords.longitude;
+      searchLocation(la, lo);
+    });
+  }
+
+  return (
+    <div className="lebox">
+      <div className="row mt-2 justify-content-center gx-0">
+        <div className="col-9 ps-0 pe-0">
+          <form className="laform" onSubmit={searchCity}>
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              className="searchbar"
+              onChange={cityChange}
+            />
+            <input type="Submit" value="Search" className="elbutton ms-1" />
+          </form>
         </div>
-
-        <form className="laform" onSubmit={searchCity}>
-          <input
-            type="search"
-            placeholder="Enter a city..."
-            className="searchbar"
-            onChange={cityChange}
-          />
-          <input type="Submit" value="Search" className="elbutton ms-1" />
-        </form>
-        <WeatherData data={weather} />
+        <div className="col-3 ps-0 pe-0">
+          <button className="elbutton" onClick={getCurrentLocation}>
+            🌟
+          </button>
+        </div>
       </div>
-    );
-  } else {
-    search();
-    return "Nyaaa...";
-  }
+      {weather.live ? <WeatherData data={weather} /> : null}
+    </div>
+  );
 }
-
-/*<button className="elbutton ms-2">🌟</button>*/

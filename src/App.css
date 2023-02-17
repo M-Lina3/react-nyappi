@@ -14,11 +14,11 @@
   padding: 20px;
 }
 .laform {
-  border: 1px solid #cca8e9;
   text-align: center;
 }
 .searchbar {
   border-color: #cca8e9;
+  max-width: 60%;
 }
 .elbutton {
   background: linear-gradient(#cca8e9, #ffb5d7);
