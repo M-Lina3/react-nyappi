@@ -9,6 +9,13 @@ export default function WeatherSearch(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   useEffect(() => {
+    function search() {
+      const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+      axios.get(apiUrl).then((res) => {
+        displayWeather(res);
+      });
+    }
     search();
   }, [city]);
 
@@ -29,14 +36,6 @@ export default function WeatherSearch(props) {
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    });
-  }
-
-  function search() {
-    const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then((res) => {
-      displayWeather(res);
     });
   }
 
