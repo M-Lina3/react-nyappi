@@ -13,9 +13,7 @@ export default function WeatherSearch(props) {
   }, [city]);
 
   function displayWeather(response) {
-    console.log("displaying weather " + response.data.name);
     setWeather({ live: false });
-
     setWeather({
       coordinates: response.data.coord,
       live: true,
@@ -35,8 +33,6 @@ export default function WeatherSearch(props) {
   }
 
   function search() {
-    console.log("looking for " + city);
-
     const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then((res) => {
@@ -51,11 +47,7 @@ export default function WeatherSearch(props) {
 
   function searchLocation(la, lo) {
     let key = "bc2cd97eaa209e7d22d8f3c84081655f";
-
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${la}&lon=${lo}8&units=metric&appid=${key}`;
-    //https://api.openweathermap.org/data/2.5/onecall?lat=${la}&lon=${lo}&units=metric&appid=${key}
-
-    console.log(lo + la);
     axios.get(apiUrl).then((res) => {
       setCity(res.data.name);
     });
@@ -66,7 +58,6 @@ export default function WeatherSearch(props) {
   }
 
   function getCurrentLocation() {
-
     navigator.geolocation.getCurrentPosition(function (position) {
       let la = position.coords.latitude;
       let lo = position.coords.longitude;
