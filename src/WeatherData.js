@@ -16,7 +16,7 @@ export default function WeatherData(props) {
           <div className="city">{props.data.name}</div>
           <div className="country">{props.data.country}</div>
           <div className="maintemp">
-            <WeatherTemp celsius={props.data.temperature} />
+            <WeatherTemp temperature={props.data.temperature} unit={props.unit} setUnit={props.setUnit}/>
           </div>
           <div className="feels">Feels Like: {props.data.feels}°</div>
           <div className="highlow">
@@ -25,11 +25,12 @@ export default function WeatherData(props) {
           <div className="mt-3"></div>
           <WeatherIcon code={props.data.icon} size={80} />
           <div className="text-capitalize">{props.data.description}</div>
-          <div>Wind: {props.data.wind} m/sec</div>
+          <div>Wind: {props.data.wind} {props.unit === "metric" ? <span>m/sec</span> : <span>mi/hr</span>}</div>
           <div>Humidity: {props.data.humidity}%</div>
         </div>
-        <WeatherForecast coordinates={props.data.coordinates} />
+        <WeatherForecast coordinates={props.data.coordinates} unit={props.unit}/>
       </div>
     </div>
   );
 }
+

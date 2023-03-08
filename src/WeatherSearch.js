@@ -5,19 +5,20 @@ import WeatherData from "./WeatherData";
 
 export default function WeatherSearch(props) {
   const [weather, setWeather] = useState({ live: false });
-  const [cityInput, setCityInput] = useState(props.defaultCity);
-  const [city, setCity] = useState(props.defaultCity);
+  const [cityInput, setCityInput] = useState("");
+  const [city, setCity] = useState("Atlanta");
+  const [unit, setUnit] = useState("metric");
 
   useEffect(() => {
     function search() {
       const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
       axios.get(apiUrl).then((res) => {
         displayWeather(res);
       });
     }
     search();
-  }, [city]);
+  }, [city, unit]);
 
   function displayWeather(response) {
     setWeather({ live: false });
@@ -41,7 +42,12 @@ export default function WeatherSearch(props) {
 
   function searchCity(event) {
     event.preventDefault();
-    setCity(cityInput);
+    if (cityInput !== "") {
+      setCity(cityInput);
+    }
+    else{
+      alert("Please enter a city");
+    }
   }
 
   function searchLocation(la, lo) {
@@ -84,7 +90,9 @@ export default function WeatherSearch(props) {
           </button>
         </div>
       </div>
-      {weather.live ? <WeatherData data={weather} /> : null}
+      {weather.live ? (
+        <WeatherData data={weather} unit={unit} setUnit={setUnit} />
+      ) : null}
     </div>
   );
 }
