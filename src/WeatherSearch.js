@@ -74,6 +74,7 @@ export default function WeatherSearch(props) {
     <div className="lebox">
       <div className="row mt-2 justify-content-center gx-0">
         <div className="col-9 ps-0 pe-0">
+        
           <form className="laform" onSubmit={searchCity}>
             <input
               type="search"
@@ -81,7 +82,7 @@ export default function WeatherSearch(props) {
               className="searchbar"
               onChange={cityChange}
             />
-            <input type="Submit" value="Search" className="elbutton ms-1" />
+            <input type="Submit" defaultValue={"Search"} className="elbutton ms-1" />
           </form>
         </div>
         <div className="col-3 ps-0 pe-0">

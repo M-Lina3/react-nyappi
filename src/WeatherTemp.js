@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
 export default function WeatherTemp(props) {
-  //const [unit, setUnit] = useState("celsius");
   function convertToF(event) {
     event.preventDefault();
     props.setUnit("imperial");
